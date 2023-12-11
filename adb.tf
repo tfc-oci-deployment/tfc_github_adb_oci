@@ -13,6 +13,7 @@ module "oci-adb" {
   compartment_ocid          = var.compartment_ocid
   region                    = var.region
   fingerprint               = var.fingerprint
+  whitelisted_ips           = ["0.0.0.0/0"]
   is_mtls_connection_required = "false"
   tag_namespace_name        = "trondataware"
   identity_tag_name         = "iac"
