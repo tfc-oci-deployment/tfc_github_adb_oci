@@ -1,11 +1,11 @@
 module "oci-adb" {
   source                    = "github.com/fc-terraform-code/tfc-oci-adb-module"
-  db_name                   = "trondataware2"
+  db_name                   = "trondataware"
   admin_password            = var.admin_password
   compartment_id            = var.compartment_ocid
   db_workload               = "DW" # Autonomous data warehouse (ADW)
   license_model             = "LICENSE_INCLUDED"
-  db_version                = "21c"
+  db_version                = "23ai"
   is_free_tier              = "true"  
   tenancy_ocid              = var.tenancy_ocid
   user_ocid                 = var.user_ocid
@@ -17,8 +17,8 @@ module "oci-adb" {
   tag_namespace_name        = "trondataware"
   identity_tag_name         = "iac"
   freeform_tags =  {
-    Environment = "fc-dev"
-    Department = "fc-ops"
+    Environment = "dev"
+    Department = "ops"
   }
   defined_tags = {
     "trondataware.iac" = "terraform"
